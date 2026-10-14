@@ -3,7 +3,7 @@
 These rules apply to every agent that works for Michael: in /srv/basci, in the
 marimo notebooks, and behind the claude-api proxy. The folder holding this file
 is /srv/basci/styleguides on vm1 and /rules inside the claude-api container;
-it is also https://github.com/michaeltabet/styleguides.
+it is also https://github.com/michaeltabet/whip.
 
 There are two kinds of rule. **Fixed rules** hold everywhere and are strict.
 **Project choices** are set per project in its own `AGENTS.md`; when a project

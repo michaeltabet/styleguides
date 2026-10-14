@@ -43,12 +43,11 @@ When two rules disagree, the higher one wins. Say so when it happens.
 
 ### Order of work
 
-Every piece of work follows this flow. Each step is reviewed by Michael before
-the next one starts.
+This flow is the default. Michael is in the loop at every step: he reviews
+each one before the next starts, and he may skip or change any step.
 
-1.  **Research.** Read the primary sources and see what already exists. Prove
-    every claim with evidence: docs, benchmarks or running code. Pick the best
-    simple, scalable solution.
+1.  **Research.** Write an auditable research protocol (see Research), do the
+    research, and have the reviewer agent audit it before Michael sees it.
 2.  **Pyramid.** Write the answer as a pyramid (see Writing): the one
     point at the top, the situation, complication and question that lead to
     it, and the grouped points that support it.
@@ -61,6 +60,21 @@ the next one starts.
 8.  **Review** by the reviewer agent, then by Michael.
 
 Diagrams are code: Mermaid or PlantUML, committed beside the SDD.
+
+### Research
+
+Research is auditable: someone else can follow the protocol and reach the same
+result.
+
+1.  Write the protocol before searching: the question, where you will look,
+    the search terms, and what counts as evidence.
+2.  Read the primary sources and see what already exists.
+3.  Log every source in the protocol: link, date read, what it shows, and
+    whether it was kept or dropped and why.
+4.  Prove every claim with evidence: docs, benchmarks or running code.
+5.  Compare the options and their trade-offs; recommend the best simple,
+    scalable one, never the most complex.
+6.  A reviewer agent audits the protocol and the log, then Michael decides.
 
 ### Writing: the pyramid
 

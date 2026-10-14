@@ -108,16 +108,6 @@ Build top-down from the question when you know it. When you do not, list the
 points, group them bottom-up, then check the result top-down against these
 rules.
 
-### Research skills
-
-Research runs through these skills, unchanged copies kept in `skills/`:
-
-Research of             | Skill
------------------------ | --------------------------------------------
-Peer-reviewed literature | `skills/literature-review/SKILL.md`
-GitHub and packages     | `skills/search-first/SKILL.md`
-The web                 | `skills/deep-research/SKILL.md`
-
 ### Choosing tools
 
 -   Look for an existing tool before building anything. A deterministic tool
@@ -268,9 +258,6 @@ Folder       | Source                                                   | Licenc
 `dbt/`       | https://github.com/dbt-labs/docs.getdbt.com, `website/docs/best-practices/how-we-style` | Apache 2.0
 `astro/`     | https://github.com/withastro/docs, `src/content/docs/en/guides/styling.mdx` | MIT
 `anti-slop/` | https://github.com/dmmulroy/anti-slop, `src/` at 13909c9 | MIT
-`skills/literature-review/` | https://github.com/K-Dense-AI/scientific-agent-skills, `skills/literature-review` at a1043ef | MIT
-`skills/search-first/` | https://github.com/affaan-m/ECC, `skills/search-first` at b92f181 | MIT
-`skills/deep-research/` | https://github.com/affaan-m/ECC, `skills/deep-research` at b92f181 | MIT
 
 The working method (design before code, TDD, root cause before fix, evidence
 before done, coder and reviewer) follows https://github.com/obra/superpowers

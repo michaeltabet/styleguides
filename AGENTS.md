@@ -43,17 +43,54 @@ When two rules disagree, the higher one wins. Say so when it happens.
 
 ### Order of work
 
+Every piece of work follows this flow. Each step is reviewed by Michael before
+the next one starts.
+
 1.  **Research.** Read the primary sources and see what already exists. Prove
     every claim with evidence: docs, benchmarks or running code. Pick the best
     simple, scalable solution.
-2.  **Data model first.** An ERD, always.
-3.  **UML.** At least the use case, sequence and activity diagrams, plus any
+2.  **Pyramid.** Write the answer as a Minto pyramid (see Writing): the one
+    point at the top, the situation, complication and question that lead to
+    it, and the grouped points that support it.
+3.  **Data model.** An ERD, always.
+4.  **UML.** At least the use case, sequence and activity diagrams, plus any
     the project adds (see project choices).
-4.  **SDD and acceptance criteria.**
-5.  **Test logic, reviewed by Michael** (see Tests).
-6.  **Code.**
+5.  **SDD and acceptance criteria.**
+6.  **Test logic** in plain words (see Tests).
+7.  **TDD.** Test, code, lint, tidy, one behaviour at a time.
+8.  **Review** by the reviewer agent, then by Michael.
 
 Diagrams are code: Mermaid or PlantUML, committed beside the SDD.
+
+### Writing: the Pyramid Principle
+
+Every document, SDD, research note, review and report is built as a pyramid,
+following Barbara Minto, *The Minto Pyramid Principle* (2010).
+
+-   **One point at the top.** The whole document supports a single thought.
+-   **Introduction as a story the reader already accepts:** the situation,
+    then the complication that changed it, which raises the question the top
+    point answers. Nothing in the introduction is open to argument.
+-   **Each point raises a question; the level below answers it.** "Why?" is
+    answered by reasons, "How?" by steps.
+-   **Groupings.** The points under one point are the same kind of idea,
+    named by one plural noun; mutually exclusive and collectively exhaustive.
+-   **Group in the middle.** Between the top and the details there are
+    middle levels; find them by asking whether one point is done in order to
+    achieve another.
+-   **One logic per grouping.** Inductive (a set of like points) or
+    deductive (a chain: statement, comment, therefore), never both. Prefer
+    inductive on the key line.
+-   **Order.** Inductive groupings are ordered by time, structure or degree;
+    deductive ones in argument order.
+-   **Size.** At least two points in a grouping; at most five inductive or
+    four deductive.
+-   **No blank assertions.** A summary states the effect of the actions or
+    the insight the points share, never a topic label such as "three issues".
+-   **The 30-second test.** If the introduction and key line do not make the
+    whole argument clear in 30 seconds, rewrite.
+-   Build top-down from the question when you know it; bottom-up from the
+    list of points when you do not, then check the result top-down.
 
 ### Choosing tools
 
@@ -199,6 +236,10 @@ Folder       | Source                                                   | Licenc
 `dbt/`       | https://github.com/dbt-labs/docs.getdbt.com, `website/docs/best-practices/how-we-style` | Apache 2.0
 `astro/`     | https://github.com/withastro/docs, `src/content/docs/en/guides/styling.mdx` | MIT
 `anti-slop/` | https://github.com/dmmulroy/anti-slop, `src/` at 13909c9 | MIT
+
+The writing rules follow Barbara Minto, *The Minto Pyramid Principle:
+Logic in Writing, Thinking and Problem Solving* (Minto International, 2010);
+the book is not copied here.
 
 The working method (design before code, TDD, root cause before fix, evidence
 before done, coder and reviewer) follows https://github.com/obra/superpowers

@@ -110,6 +110,12 @@ rules.
 
 ### Choosing tools
 
+-   Look for an existing tool before building anything. A deterministic tool
+    that already does the job (a CLI, a service such as Goldpinger, a
+    library) comes first. Build only once the research shows there is no
+    such option, and show that research.
+-   Prefer deterministic code to an agent or model call whenever code can do
+    the job.
 -   Default to foundation-backed open source under the Apache License 2.0:
     projects of the Apache Software Foundation, the CNCF or the Linux
     Foundation. Anything else needs a stated reason.

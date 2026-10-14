@@ -108,6 +108,20 @@ Build top-down from the question when you know it. When you do not, list the
 points, group them bottom-up, then check the result top-down against these
 rules.
 
+### Research skills
+
+Research follows an existing protocol, never one the agent invents. These
+skills are unchanged copies kept in `skills/`:
+
+Research of              | Skill
+------------------------ | ---------------------------------------------------
+Peer-reviewed literature | `skills/literature-review/`, searching with `skills/paper-lookup/`
+GitHub and packages      | `skills/search-first/`
+The web                  | `skills/deep-research/`
+
+Where a skill tells the agent to decide, adopt or pick, it stops at a
+recommendation; Michael decides.
+
 ### Choosing tools
 
 -   Look for an existing tool before building anything. A deterministic tool
@@ -116,9 +130,27 @@ rules.
     such option, and show that research.
 -   Prefer deterministic code to an agent or model call whenever code can do
     the job.
--   Default to foundation-backed open source under the Apache License 2.0:
-    projects of the Apache Software Foundation, the CNCF or the Linux
-    Foundation. Anything else needs a stated reason.
+
+After the research, score every option against these decision rules, in
+this order. The recommendation is the option that passes the most rules,
+highest first; every option stays in the comparison.
+
+1.  **Decoupled.** It can be replaced without changing the code around it:
+    it sits behind a standard protocol or one interface we own. Choose the
+    decoupled option whenever one exists.
+2.  **Foundation-backed open source.** Apache License 2.0 under the Apache
+    Software Foundation, the CNCF or the Linux Foundation is best. Other OSI
+    licences need a stated reason. Source-available or open-core software
+    sold as open source (BSL, SSPL, Elastic License, "community editions"
+    with paid core features) is never chosen, unless the research shows an
+    extremely strong case and Michael approves it by name.
+3.  **Simplest that solves it and scales.** It solves the problem, scales to
+    the expected load, and adds no toil: no hand-run upgrades, babysitting or
+    new on-call duty. The fewest moving parts wins.
+4.  **Fits our stack.** It runs on what we already run (Postgres with
+    pgvector, ClickHouse, Temporal, Airflow, Superset, Docker on vm1,
+    Ansible) and in our languages, without a new platform to learn or
+    operate.
 
 ### Everything as code
 
@@ -258,6 +290,10 @@ Folder       | Source                                                   | Licenc
 `dbt/`       | https://github.com/dbt-labs/docs.getdbt.com, `website/docs/best-practices/how-we-style` | Apache 2.0
 `astro/`     | https://github.com/withastro/docs, `src/content/docs/en/guides/styling.mdx` | MIT
 `anti-slop/` | https://github.com/dmmulroy/anti-slop, `src/` at 13909c9 | MIT
+`skills/literature-review/` | https://github.com/K-Dense-AI/scientific-agent-skills, `skills/literature-review` at a1043ef | MIT
+`skills/paper-lookup/` | https://github.com/K-Dense-AI/scientific-agent-skills, `skills/paper-lookup` at a1043ef | MIT
+`skills/search-first/` | https://github.com/affaan-m/ECC, `skills/search-first` at b92f181 | MIT
+`skills/deep-research/` | https://github.com/affaan-m/ECC, `skills/deep-research` at b92f181 | MIT
 
 The working method (design before code, TDD, root cause before fix, evidence
 before done, coder and reviewer) follows https://github.com/obra/superpowers

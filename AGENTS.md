@@ -49,7 +49,7 @@ the next one starts.
 1.  **Research.** Read the primary sources and see what already exists. Prove
     every claim with evidence: docs, benchmarks or running code. Pick the best
     simple, scalable solution.
-2.  **Pyramid.** Write the answer as a Minto pyramid (see Writing): the one
+2.  **Pyramid.** Write the answer as a pyramid (see Writing): the one
     point at the top, the situation, complication and question that lead to
     it, and the grouped points that support it.
 3.  **Data model.** An ERD, always.
@@ -62,35 +62,37 @@ the next one starts.
 
 Diagrams are code: Mermaid or PlantUML, committed beside the SDD.
 
-### Writing: the Pyramid Principle
+### Writing: the pyramid
 
-Every document, SDD, research note, review and report is built as a pyramid,
-following Barbara Minto, *The Minto Pyramid Principle* (2010).
+Every document, SDD, research note, review and report is a pyramid. These are
+hard rules; a document that breaks one is rewritten before anyone reads it.
 
--   **One point at the top.** The whole document supports a single thought.
--   **Introduction as a story the reader already accepts:** the situation,
-    then the complication that changed it, which raises the question the top
-    point answers. Nothing in the introduction is open to argument.
--   **Each point raises a question; the level below answers it.** "Why?" is
-    answered by reasons, "How?" by steps.
--   **Groupings.** The points under one point are the same kind of idea,
-    named by one plural noun; mutually exclusive and collectively exhaustive.
--   **Group in the middle.** Between the top and the details there are
-    middle levels; find them by asking whether one point is done in order to
-    achieve another.
--   **One logic per grouping.** Inductive (a set of like points) or
-    deductive (a chain: statement, comment, therefore), never both. Prefer
-    inductive on the key line.
--   **Order.** Inductive groupings are ordered by time, structure or degree;
-    deductive ones in argument order.
--   **Size.** At least two points in a grouping; at most five inductive or
-    four deductive.
--   **No blank assertions.** A summary states the effect of the actions or
-    the insight the points share, never a topic label such as "three issues".
--   **The 30-second test.** If the introduction and key line do not make the
-    whole argument clear in 30 seconds, rewrite.
--   Build top-down from the question when you know it; bottom-up from the
-    list of points when you do not, then check the result top-down.
+1.  The document supports exactly one point, stated at the top.
+2.  The introduction is situation, complication, question. The complication
+    must raise exactly the question the top point answers.
+3.  The introduction holds only what the reader already accepts as true.
+4.  Every point is a full sentence that raises a question in the reader's
+    mind; the level below answers it. "Why?" is answered by reasons, "How?"
+    by steps.
+5.  Every grouping holds ideas of one kind, named by one plural noun.
+6.  Every grouping is mutually exclusive and collectively exhaustive.
+7.  Every grouping is inductive or deductive, never both. The key line is
+    inductive unless a deduction is unavoidable.
+8.  An inductive grouping is ordered by time, structure or degree; a
+    deductive one by argument: statement, comment, therefore.
+9.  A grouping has at least two points, at most five if inductive and at most
+    four if deductive.
+10. There are middle levels between the top and the details. At every level
+    ask whether one point is done in order to achieve another, and group
+    them if so.
+11. No blank assertions. A summary point states the effect of the actions
+    below it or the insight they share, never a label such as "three issues".
+12. If the introduction and key line do not make the whole argument clear in
+    30 seconds, rewrite.
+
+Build top-down from the question when you know it. When you do not, list the
+points, group them bottom-up, then check the result top-down against these
+rules.
 
 ### Choosing tools
 
@@ -236,10 +238,6 @@ Folder       | Source                                                   | Licenc
 `dbt/`       | https://github.com/dbt-labs/docs.getdbt.com, `website/docs/best-practices/how-we-style` | Apache 2.0
 `astro/`     | https://github.com/withastro/docs, `src/content/docs/en/guides/styling.mdx` | MIT
 `anti-slop/` | https://github.com/dmmulroy/anti-slop, `src/` at 13909c9 | MIT
-
-The writing rules follow Barbara Minto, *The Minto Pyramid Principle:
-Logic in Writing, Thinking and Problem Solving* (Minto International, 2010);
-the book is not copied here.
 
 The working method (design before code, TDD, root cause before fix, evidence
 before done, coder and reviewer) follows https://github.com/obra/superpowers
